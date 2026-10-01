@@ -8,4 +8,4 @@ function formatearDinero(cantidad){
 
 }
 
-console.log(formatearDinero(saldoActual))
+console.log(formatearDinero(saldoActual) + simboloMon)
