@@ -4,7 +4,7 @@ const simboloMon = "€"
 
 function formatearDinero(cantidad){
 
-    return number.parsefloat(cantidad).toFixed(2);
+    return Number.parseFloat(cantidad).toFixed(2);
 
 }
 
