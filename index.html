@@ -7,6 +7,31 @@
 </head>
 <body>
     
+<label for="filtroCategoria">Filtrar por categoría:</label>
+<select id="filtroCategoria">
+  <option value="todas">Todas</option>
+  <option value="Transferencia">Transferencia</option>
+  <option value="Alimentación">Alimentación</option>
+  <option value="Hogar">Hogar</option>
+  <option value="Nomina">Nómina</option>
+  <option value="Suscripciones y Tecnología">Suscripciones y Tecnología</option>
+</select>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Concepto</th>
+      <th>Importe</th>
+      <th>Categoría</th>
+      <th>Fecha</th>
+    </tr>
+  </thead>
+  <tbody id="cuerpoTabla">
+
+  </tbody>
+</table>
+
     <script src="app.js"></script>
 </body>
 </html>
