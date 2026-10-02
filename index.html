@@ -1,37 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <title>Gestor de Finanzas</title>
+  <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-    
-<label for="filtroCategoria">Filtrar por categoría:</label>
-<select id="filtroCategoria">
-  <option value="todas">Todas</option>
-  <option value="Transferencia">Transferencia</option>
-  <option value="Alimentación">Alimentación</option>
-  <option value="Hogar">Hogar</option>
-  <option value="Nomina">Nómina</option>
-  <option value="Suscripciones y Tecnología">Suscripciones y Tecnología</option>
-</select>
 
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Concepto</th>
-      <th>Importe</th>
-      <th>Categoría</th>
-      <th>Fecha</th>
-    </tr>
-  </thead>
-  <tbody id="cuerpoTabla">
+  <div class="contenedor-app">
 
-  </tbody>
-</table>
+    <form id="formularioMovimiento" class="formulario">
+      <div class="campo">
+        <label for="inputConcepto">Concepto:</label>
+        <input type="text" id="inputConcepto" placeholder="Ej: Supermercado" required>
+      </div>
 
-    <script src="app.js"></script>
+      <div class="campo">
+        <label for="inputImporte">Importe (positivo ingreso, negativo gasto):</label>
+        <input type="number" step="0.01" id="inputImporte" placeholder="Ej: -45.50" required>
+      </div>
+
+      <div class="campo">
+        <label for="selectCategoriaForm">Categoría:</label>
+        <select id="selectCategoriaForm" required>
+          <option value="Transferencia">Transferencia</option>
+          <option value="Alimentación">Alimentación</option>
+          <option value="Hogar">Hogar</option>
+          <option value="Nomina">Nómina</option>
+          <option value="Suscripciones y Tecnología">Suscripciones y Tecnología</option>
+          <option value="Otros">Otros</option>
+        </select>
+      </div>
+
+      <button type="submit" id="btnAnadir">Añadir Movimiento</button>
+    </form>
+
+    <div class="tarjeta-resumen">
+      <p><strong>Saldo actual:</strong> <span id="spanSaldo">0.00 €</span></p>
+      <div id="categoriaMayorGasto"></div>
+    </div>
+
+    <div class="panel-filtro">
+      <label for="filtroCategoria">Filtrar por categoría:</label>
+      <select id="filtroCategoria">
+        <option value="todas">Todas</option>
+        <option value="Transferencia">Transferencia</option>
+        <option value="Alimentación">Alimentación</option>
+        <option value="Hogar">Hogar</option>
+        <option value="Nomina">Nómina</option>
+        <option value="Suscripciones y Tecnología">Suscripciones y Tecnología</option>
+        <option value="Otros">Otros</option>
+      </select>
+    </div>
+
+    <div class="tabla-contenedor">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Concepto</th>
+            <th>Importe</th>
+            <th>Categoría</th>
+            <th>Fecha</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+        <tbody id="cuerpoTabla"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
